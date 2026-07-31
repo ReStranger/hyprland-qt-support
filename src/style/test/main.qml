@@ -175,6 +175,34 @@ ApplicationWindow {
                     Item { Layout.fillHeight: true }
                 }
 
+                ColumnLayout {
+                    Layout.maximumWidth: 200
+                    Label { text: "Menu" }
+
+                    Button {
+                        text: "Open Menu"
+                        onClicked: demoMenu.open()
+
+                        Menu {
+                            id: demoMenu
+                            y: parent.height
+
+                            Action { text: "First Action" }
+                            MenuItem { text: "Checkable"; checkable: true; checked: true }
+                            Menu {
+                                title: "Submenu"
+
+                                MenuItem { text: "Nested Action" }
+                                MenuItem { text: "Another Nested" }
+                            }
+                            MenuSeparator { }
+                            MenuItem { text: "Disabled"; enabled: false }
+                        }
+                    }
+
+                    Item { Layout.fillHeight: true }
+                }
+
                 Item { Layout.fillWidth: true }
             }
         }

@@ -163,6 +163,27 @@ ApplicationWindow {
                 }
 
                 ColumnLayout {
+                    Layout.maximumWidth: 220
+                    Label { text: "Switch" }
+
+                    Switch { text: "Normal" }
+                    Switch { text: "Checked"; checked: true }
+                    Switch { text: "Disabled"; enabled: false }
+                    Switch { text: "Disabled Checked"; enabled: false; checked: true }
+                    Item { Layout.fillHeight: true }
+                }
+
+                ColumnLayout {
+                    Layout.maximumWidth: 220
+                    Label { text: "Slider" }
+
+                    Slider { Layout.fillWidth: true; value: 0.25 }
+                    Slider { Layout.fillWidth: true; value: 0.75 }
+                    Slider { Layout.fillWidth: true; enabled: false; value: 0.5 }
+                    Item { Layout.fillHeight: true }
+                }
+
+                ColumnLayout {
                     Layout.maximumWidth: 200
                     Label { text: "TextField" }
 
